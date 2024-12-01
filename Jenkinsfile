@@ -10,15 +10,14 @@ pipeline {
                 }
             }
             steps {
-                sh ''
-                '
+                sh '''
                 ls - la
                 node--version
                 npm--version
                 npm ci
                 npm run build
-                ls - la ''
-                '
+                ls - la 
+                '''
             }
         }
         stage('Test') {
@@ -29,13 +28,11 @@ pipeline {
                 }
             }
             steps {
-                sh ''
-                '
+                sh '''
                 echo "Test stage"
                 test - f build / index.html
                 nmp test
-                    ''
-                '
+                    '''
             }
         }
     }
