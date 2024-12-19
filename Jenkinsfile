@@ -4,6 +4,7 @@ pipeline {
     environment {
         NETLIFY_SITE_ID = '7241eb7b-027a-41cf-84e8-3f853d72c745'
         NETLIFY_AUTH_TOKEN = credentials('netlify-token')
+        REACT_APP_VERSION = '1.2.3'
     }
 
     stages {
@@ -24,7 +25,6 @@ pipeline {
                 ls -la '''
             }
         }
-
 
         stage('Tests') {
             parallel {
